@@ -58,6 +58,22 @@ npm run lint    # eslint
 npm run deploy  # publish dist/ to GitHub Pages
 ```
 
+## Deploying
+
+The build uses a relative `base` (`vite.config.ts`), so a single `npm run
+build` works wherever it is served from — the domain root on Vercel or
+Netlify, and `/financetrack/` on GitHub Pages. Do not change `base` to an
+absolute path for one host: it hard-codes that path into every asset URL and
+the app loads a blank page on the other.
+
+Routing is hash-based (`createHashRouter`), so deep links like `/#/bills`
+resolve client-side and no rewrite rules or `vercel.json` are needed.
+
+On Vercel the defaults are correct as-is: build command `npm run build`,
+output directory `dist`. Note that Vercel builds the **production branch**
+(`main` by default) — work on a feature branch shows up as a preview
+deployment, not on the production URL.
+
 ## Data
 
 All figures are illustrative demo data under `src/**/data/`, written to look

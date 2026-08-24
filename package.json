@@ -1,8 +1,11 @@
 {
-  "homepage": "https://Mentorg.github.io/fintrack",
-  "name": "fintrack",
-  "private": false,
-  "version": "0.0.0",
+  "name": "calanque",
+  "description": "Calanque — the finance dashboard of Studio Calanque.",
+  "homepage": "https://gaelnap.github.io/financetrack",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Studio Calanque",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

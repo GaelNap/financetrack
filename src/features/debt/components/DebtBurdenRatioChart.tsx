@@ -80,7 +80,7 @@ export const DebtBurdenRatioChart = ({ data }: { data: BarDatum[] }) => {
       }}
       legends={[]}
       role="application"
-      ariaLabel="Nivo bar chart demo"
+      ariaLabel="Debt burden ratio by category"
       barAriaLabel={(e) =>
         e.id + ": " + e.formattedValue + " in country: " + e.indexValue
       }

@@ -1,6 +1,6 @@
 const trendAnalysisData = [
   {
-    id: "Rent",
+    id: "Studio lease",
     color: "hsl(152, 70%, 50%)",
     data: [
       {
@@ -108,7 +108,7 @@ const trendAnalysisData = [
     ],
   },
   {
-    id: "Internet",
+    id: "Software",
     color: "hsl(201, 70%, 50%)",
     data: [
       {
@@ -162,7 +162,7 @@ const trendAnalysisData = [
     ],
   },
   {
-    id: "Phone",
+    id: "Collaborators",
     color: "hsl(203, 70%, 50%)",
     data: [
       {
@@ -440,13 +440,13 @@ const spendingBreakdownData = [
 ];
 
 const budgetComparisonData = [
-  { category: "Groceries", budget: 500, actual: 400 },
-  { category: "Rent", budget: 1000, actual: 950 },
-  { category: "Transportation", budget: 200, actual: 180 },
-  { category: "Entertainment", budget: 300, actual: 350 },
-  { category: "Healthcare", budget: 150, actual: 120 },
-  { category: "Utilities", budget: 250, actual: 200 },
-  { category: "Other Expenses", budget: 400, actual: 420 },
+  { category: "Studio lease", budget: 1600, actual: 1450 },
+  { category: "Software & licences", budget: 500, actual: 330 },
+  { category: "Collaborators", budget: 3000, actual: 1900 },
+  { category: "Gear & maintenance", budget: 1200, actual: 640 },
+  { category: "Travel & shoots", budget: 1000, actual: 480 },
+  { category: "URSSAF & taxes", budget: 1500, actual: 1180 },
+  { category: "Print & production", budget: 1500, actual: 870 }
 ];
 
 export {

@@ -2,6 +2,7 @@ import { Box, useTheme } from "@mui/material";
 import { BarDatum, ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../../../assets/theme";
 import { portfolioOverviewData } from "../data/investments";
+import { formatCurrency } from "../../../config/brand";
 
 const MyResponsiveBar = ({ data }: { data: BarDatum[] }) => {
   const theme = useTheme();
@@ -16,7 +17,7 @@ const MyResponsiveBar = ({ data }: { data: BarDatum[] }) => {
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
-      valueFormat=" =-$0,~"
+      valueFormat={(value) => formatCurrency(Number(value))}
       colors={`${colors.blueAccent[400]}`}
       borderColor={{
         from: "color",
@@ -73,7 +74,7 @@ const MyResponsiveBar = ({ data }: { data: BarDatum[] }) => {
       }}
       legends={[]}
       role="application"
-      ariaLabel="Nivo bar chart demo"
+      ariaLabel="Portfolio overview by category"
       barAriaLabel={(e) =>
         e.id + ": " + e.formattedValue + " in country: " + e.indexValue
       }

@@ -1,83 +1,70 @@
-<p align="center">
-  <img src="https://github.com/Mentorg/fintrack/assets/18701723/ba5e4a0f-c8f3-444d-a3b2-638f21a2bcb1" />
-</p>
+# Calanque
 
-<div align="center">
+**The finance dashboard of Studio Calanque — Marseille.**
 
-## Introduction
----
-[![License: MPL 2.0](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/license/apache-2-0) ![General badge](https://img.shields.io/badge/npm_package-1.0.0-green.svg) [![General badge](https://img.shields.io/badge/live-demo-blue.svg)](https://mentorg.github.io/fintrack/) ![General badge](https://img.shields.io/github/repo-size/Mentorg/fintrack) ![General badge](https://img.shields.io/github/last-commit/Mentorg/fintrack/main)
+Calanque is the studio's own dashboard for the money side of running a small
+creative practice: what came in this month, what goes out on the 1st, how much
+is set aside for URSSAF, and how long the buffer would last if the phone stopped
+ringing. It runs entirely in the browser on demo data, so it can be opened,
+shown to an accountant, or deployed to GitHub Pages without any backend.
 
-</div>
-Fintrack is a feature-rich personal finance management app built with React and Typescript. This intuitive app helps you effortlessly track and organize your income, expenses, savings, and investments. With a sleek and user-friendly interface, Fintrack ensures a seamless experience for effectively managing your finances.
+Built on React 18 + TypeScript + MUI, forked from
+[Mentorg/fintrack](https://github.com/Mentorg/fintrack) and rebuilt around
+Studio Calanque's identity, currency and way of working.
 
-### Demo
----
-Here is a working live demo: https://mentorg.github.io/fintrack/
+## What's inside
 
-### Previews
----
-<div  align="center">
-<img  src="https://github.com/Mentorg/fintrack/assets/18701723/33ad4346-72f6-478f-b7b8-af8bcd90ee64"  alt="Fintrack light mode"  width="50%"><img  src="https://github.com/Mentorg/fintrack/assets/18701723/a05e93f6-51ec-416e-ac44-e4dc00cfe343"  alt="Fintrack light mode"  width="50%">
-</div>
-<p>&nbsp;</p>
+| Page | What it answers |
+| --- | --- |
+| **Overview** | Income, expenses, balance, savings and investments at a glance |
+| **Budget** | Where the studio's money comes from, and where it goes |
+| **Bills** | Every recurring cost — lease, fibre, software, URSSAF — and what's due next |
+| **Reports** | Trends across the year, month by month |
+| **Debt** | Loans and credit lines, and how fast they're shrinking |
+| **Investments** | What the studio holds outside the current account |
+| **Net Worth** | Everything the studio owns, minus everything it owes |
+| **Settings** | The studio profile, address, VAT number and regional preferences |
 
-### Features
----
-- **Overview:** Get an overview of your current financial status and key indicators.
-- **Budget:** Set and track your monthly budget across different categories.
-- **Bills:** Manage and track your recurring bills and payments.
-- **Reports & Analytics:** Visualize your financial data with interactive charts and graphs.
-- **Debt Management:** Keep track of your debts and analyze repayment progress.
-- **Investments:** Monitor and track your investment portfolio.
-- **Net Worth:** Calculate your net worth based on your assets and liabilities.
-- **Settings:** Customize the app according to your preferences.
+## Making it yours
 
-### Built with
----
-- [React 18](https://react.dev/)
-- [Typescript 5](https://www.typescriptlang.org/)
-- [React Router 6](https://reactrouter.com/en/main)
-- [React Pro Sidebar](https://github.com/azouaoui-med/react-pro-sidebar)
-- [MUI 5](https://mui.com/)
-- [Nivo](https://nivo.rocks/)
-- [Formik 2](https://formik.org/)
-- [Yup](https://github.com/jquense/yup)
+Every detail that identifies this instance lives in one file —
+[`src/config/brand.ts`](src/config/brand.ts):
 
-### Setup
----
-To get started with this project, follow these steps:
+```ts
+export const brand = { name: "Calanque", fullName: "Studio Calanque", ... };
+export const account = { displayName, owner, email, phone, address, taxId, ... };
+export const preferences = { locale: "fr-FR", currency: "EUR", ... };
+```
 
-**1. Prerequisites**
+Change those values and the sidebar, the user menu, the settings page, the
+currency formatting and the chart palette all follow. The contact details
+shipped here are placeholders — swap in the studio's real email, phone, VAT
+number and address before deploying anywhere public.
 
-Make sure you have Node.js and npm installed on your computer. You can download and install them from [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+The visual identity is two files: `src/assets/logo.svg` (the inlet, cliffs and
+sun) and `src/assets/avatar.svg` (the **SC** monogram). Colours live in
+`src/assets/theme.ts` — deep-sea navy surfaces, turquoise water as the accent,
+limestone in light mode, terracotta for anything negative.
 
-**2. Clone the repository**
+## Running it
 
-Clone this repository to your local machine using the following command:
+Requires Node.js 18+ and npm.
 
-`git clone https://github.com/Mentorg/fintrack.git`
+```bash
+npm install     # install dependencies
+npm run dev     # start the dev server
+npm run build   # type-check and build to dist/
+npm run lint    # eslint
+npm run deploy  # publish dist/ to GitHub Pages
+```
 
-**3. Navigate to the project directory**
+## Data
 
-Navigate to the project directory using the following command:
+All figures are illustrative demo data under `src/**/data/`, written to look
+like a small Marseille studio's books. Nothing is fetched, stored or sent
+anywhere — replace those modules with a real source when the time comes.
 
-`cd fintrack-main`
+## Licence
 
-**4. Install dependencies**
-
-Install the project dependencies using the following command:
-
-`npm install`
-
-**5. Start the development server**
-
-Start the development server using the following command:
-
-`npm run dev`
-
-This will start the development server and open the project in your default web browser.
-
-### Licence
----
-This project is licenced under the [Apache License, Version 2.0](https://opensource.org/license/apache-2-0/).
+Apache License 2.0 — see [LICENSE](LICENSE). The upstream project it is based
+on is © its original authors under the same licence.

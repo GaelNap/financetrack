@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material";
 import { BarDatum, ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../../../assets/theme";
+import { chartPalette, formatCurrency } from "../../../config/brand";
 
 export const SpendingBreakdownChart = ({ data }: { data: BarDatum[] }) => {
   const theme = useTheme();
@@ -16,8 +17,8 @@ export const SpendingBreakdownChart = ({ data }: { data: BarDatum[] }) => {
       groupMode="stacked"
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
-      valueFormat=" =-$0,~"
-      colors={{ scheme: "purple_orange" }}
+      valueFormat={(value) => formatCurrency(Number(value))}
+      colors={chartPalette}
       defs={[
         {
           id: "dots",
@@ -91,7 +92,7 @@ export const SpendingBreakdownChart = ({ data }: { data: BarDatum[] }) => {
       }}
       legends={[]}
       role="application"
-      ariaLabel="Nivo bar chart demo"
+      ariaLabel="Weekly spending breakdown"
       barAriaLabel={(e) =>
         e.id + ": " + e.formattedValue + " in country: " + e.indexValue
       }

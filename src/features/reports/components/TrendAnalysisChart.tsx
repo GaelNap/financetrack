@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
 import { tokens } from "../../../assets/theme";
+import { chartPalette } from "../../../config/brand";
 
 interface TrendAnalysisChartProps {
   id: string;
@@ -70,7 +71,7 @@ export const TrendAnalysisChart = ({ data }: { data: TrendAnalysisChartProps[] }
           },
         },
       }}
-      colors={{ scheme: "set1" }}
+      colors={chartPalette}
       pointSize={10}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}

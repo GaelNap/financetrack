@@ -1,6 +1,7 @@
 import { Box, Button, Grid, Typography, useTheme } from "@mui/material";
 import BasicInformation from "./components/BasicInformation";
 import { tokens } from "../../assets/theme";
+import { account } from "../../config/brand";
 import AddressInformation from "./components/AddressInformation";
 import PersonalInformation from "./components/PersonalInformation";
 import AccountPreferences from "./components/AccountPreferences";
@@ -16,12 +17,12 @@ export default function Settings() {
       <Box sx={{ padding: 2 }}>
         <Box sx={{ paddingBlock: 2, width: "100%" }}>
           <Typography variant="h1">Settings</Typography>
-          <Typography variant="h6">Manage your app's settings</Typography>
+          <Typography variant="h6">Manage how {account.displayName} uses the dashboard</Typography>
         </Box>
         <Box sx={{ backgroundColor: colors.primary[400], padding: 4 }}>
           <Box sx={{ paddingBlock: 2, width: "100%" }}>
-            <Typography variant="h3">My Profile</Typography>
-            <Typography variant="h6">Update your profile here.</Typography>
+            <Typography variant="h3">Studio Profile</Typography>
+            <Typography variant="h6">Update the studio&apos;s details here.</Typography>
           </Box>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12} md={12} lg={6}>

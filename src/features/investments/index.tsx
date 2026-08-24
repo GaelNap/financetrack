@@ -10,7 +10,7 @@ export default function Investments() {
       <Box sx={{ padding: 2 }}>
         <Box sx={{ paddingBlock: 2, width: "100%" }}>
           <Typography variant="h1">Investments</Typography>
-          <Typography variant="h6">Maximize your investment potential with personalized advice</Typography>
+          <Typography variant="h6">What the studio holds outside the current account</Typography>
         </Box>
         <Grid container spacing={2} sx={{ width: "100%" }}>
           <Grid item xs={12} md={6}>

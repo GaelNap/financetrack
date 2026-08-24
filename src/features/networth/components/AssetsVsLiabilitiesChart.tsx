@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material";
 import { BarDatum, ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../../../assets/theme";
+import { chartPalette, formatCurrency } from "../../../config/brand";
 
 export const AssetsVsLiabilitiesChart = ({ data }: { data: BarDatum[] }) => {
   const theme = useTheme();
@@ -16,8 +17,8 @@ export const AssetsVsLiabilitiesChart = ({ data }: { data: BarDatum[] }) => {
       layout="vertical"
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
-      valueFormat=" =-$0,~"
-      colors={{ scheme: "purple_orange" }}
+      valueFormat={(value) => formatCurrency(Number(value))}
+      colors={chartPalette}
       defs={[
         {
           id: "dots",
@@ -60,7 +61,7 @@ export const AssetsVsLiabilitiesChart = ({ data }: { data: BarDatum[] }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "country",
+        legend: "Period",
         legendPosition: "middle",
         legendOffset: 32,
       }}
@@ -68,7 +69,7 @@ export const AssetsVsLiabilitiesChart = ({ data }: { data: BarDatum[] }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "food",
+        legend: "Amount",
         legendPosition: "middle",
         legendOffset: -40,
       }}
@@ -105,9 +106,9 @@ export const AssetsVsLiabilitiesChart = ({ data }: { data: BarDatum[] }) => {
       }}
       legends={[]}
       role="application"
-      ariaLabel="Nivo bar chart demo"
+      ariaLabel="Assets versus liabilities"
       barAriaLabel={(e) =>
-        e.id + ": " + e.formattedValue + " in country: " + e.indexValue
+        e.id + ": " + e.formattedValue + " in " + e.indexValue
       }
     />
   );

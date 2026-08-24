@@ -13,6 +13,7 @@ import DebtOverview from "../debt/components/DebtOverview";
 import PersonalFinancesCard from "./components/PersonalFinanceCard";
 import SpendingBreakdown from "../reports/components/SpendingBreakdown";
 import { tokens } from "../../assets/theme";
+import { account } from "../../config/brand";
 
 export default function Overview() {
   const theme = useTheme();
@@ -22,9 +23,9 @@ export default function Overview() {
     <>
       <Box sx={{ padding: 2 }}>
         <Box sx={{ paddingBlock: 2, width: "100%" }}>
-          <Typography variant="h1">Overview</Typography>
+          <Typography variant="h1">{account.displayName}</Typography>
           <Typography variant="h6">
-            A snapshot of your financial health
+            A snapshot of the studio&apos;s finances — {account.address.city}
           </Typography>
         </Box>
         <Grid container spacing={2} sx={{ width: "100%" }}>

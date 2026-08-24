@@ -1,7 +1,8 @@
 import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
 import { Edit } from "@mui/icons-material";
-import userImage from "../../../assets/user.png";
+import avatarImage from "../../../assets/avatar.svg";
 import { tokens } from "../../../assets/theme";
+import { account } from "../../../config/brand";
 
 const BasicInformation = () => {
   const theme = useTheme();
@@ -19,8 +20,8 @@ const BasicInformation = () => {
       >
         <Box>
           <Avatar
-            alt="User Picture"
-            src={userImage}
+            alt={account.displayName}
+            src={avatarImage}
             sx={{ height: 90, width: 90 }}
           />
         </Box>
@@ -32,12 +33,12 @@ const BasicInformation = () => {
             justifyContent: "center",
           }}
         >
-          <Typography variant="h3">John Smith</Typography>
+          <Typography variant="h3">{account.displayName}</Typography>
           <Typography variant="h5" color={colors.grey[100]}>
-            Lawyer
+            {account.owner} · {account.role}
           </Typography>
           <Typography variant="h6" color={colors.grey[100]}>
-            New York, USA
+            {account.address.city}, {account.address.country}
           </Typography>
         </Box>
         <Box sx={{ ml: "auto" }}>

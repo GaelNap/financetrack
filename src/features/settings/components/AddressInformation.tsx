@@ -1,6 +1,7 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { Edit } from "@mui/icons-material";
 import { tokens } from "../../../assets/theme";
+import { account } from "../../../config/brand";
 
 const AddressInformation = () => {
   const theme = useTheme();
@@ -17,25 +18,27 @@ const AddressInformation = () => {
             <Typography color={colors.grey[300]} variant="h6">
               Country
             </Typography>
-            <Typography variant="h5">USA</Typography>
+            <Typography variant="h5">{account.address.country}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
               Postal Code
             </Typography>
-            <Typography variant="h5">ERT 2345</Typography>
+            <Typography variant="h5">{account.address.postalCode}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
-              City/State
+              Street / City
             </Typography>
-            <Typography variant="h5">New York</Typography>
+            <Typography variant="h5">
+              {account.address.street}, {account.address.city}
+            </Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
-              Tax ID
+              VAT / Tax ID
             </Typography>
-            <Typography variant="h5">S651A6S6DADS</Typography>
+            <Typography variant="h5">{account.taxId}</Typography>
           </Box>
           <Box className="settingItem btn">
             <Button color="success" endIcon={<Edit />} variant="outlined">

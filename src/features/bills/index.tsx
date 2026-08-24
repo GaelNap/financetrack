@@ -9,7 +9,7 @@ export default function Bills() {
         <Box sx={{ paddingBlock: 2 }}>
           <Typography variant="h1">Bills</Typography>
           <Typography variant="h6">
-            Stay on Top of Your Financial Obligations
+            Every recurring cost the studio carries, and what is due next
           </Typography>
         </Box>
         <Grid container spacing={2}>

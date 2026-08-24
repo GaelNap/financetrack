@@ -7,9 +7,12 @@ export default function Error() {
       <Box>
         <Typography variant="h1" fontWeight={600} textAlign="center">404</Typography>
       </Box>
-      <Typography variant="h4" mt={4} textAlign="center">Sorry, but that's not a valid link!</Typography>
+      <Typography variant="h4" mt={4} textAlign="center">
+        This page drifted out to sea.
+      </Typography>
       <Typography variant="h6" fontWeight={400} textAlign="center">
-        It may have been removed, had its name changed, or the address may be incorrect.
+        The page may have been removed or renamed — or the address is simply
+        wrong. Head back to the overview and start again.
       </Typography>
     </Box>
   )

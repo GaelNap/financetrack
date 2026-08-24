@@ -1,6 +1,7 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { Edit } from "@mui/icons-material";
 import { tokens } from "../../../assets/theme";
+import { account } from "../../../config/brand";
 
 const PersonalInformation = () => {
   const theme = useTheme();
@@ -10,44 +11,44 @@ const PersonalInformation = () => {
     <>
       <Box className="settingWrapper">
         <Box>
-          <Typography variant="h5">Personal Information</Typography>
+          <Typography variant="h5">Studio Information</Typography>
         </Box>
         <Box className="settingLayout threeRows">
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
-              First Name
+              Studio Name
             </Typography>
-            <Typography variant="h5">John</Typography>
+            <Typography variant="h5">{account.displayName}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
               Email Address
             </Typography>
-            <Typography variant="h5">johnsmith@gmail.com</Typography>
+            <Typography variant="h5">{account.email}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
               Bio
             </Typography>
-            <Typography variant="h5">Lawyer</Typography>
+            <Typography variant="h5">{account.role}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
-              Last Name
+              Account Owner
             </Typography>
-            <Typography variant="h5">Smith</Typography>
+            <Typography variant="h5">{account.owner}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
-              Birthday
+              Founded
             </Typography>
-            <Typography variant="h5">03.04.1985</Typography>
+            <Typography variant="h5">{account.foundedIn}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
               Phone Number
             </Typography>
-            <Typography variant="h5">+808 54 99 65 25</Typography>
+            <Typography variant="h5">{account.phone}</Typography>
           </Box>
           <Box className="settingItem btn">
             <Button color="success" endIcon={<Edit />} variant="outlined">

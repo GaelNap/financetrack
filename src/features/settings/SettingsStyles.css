@@ -8,8 +8,9 @@
 .settingLayout {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: 1fr 1fr;
+  column-gap: 1.5rem;
   row-gap: 0.5rem;
 }
 
@@ -20,6 +21,10 @@
   flex-direction: column;
   justify-self: left;
   margin-block: 0.5;
+  min-width: 0;
+  /* long values — an email address, a VAT number — wrap instead of
+     running into the neighbouring column */
+  overflow-wrap: anywhere;
 }
 
 .settingItem.btn {

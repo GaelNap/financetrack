@@ -10,7 +10,7 @@ const Reports = () => {
       <Box sx={{ padding: 2 }}>
         <Box sx={{ paddingBlock: 2 }}>
           <Typography variant="h1">Reports & Analysis</Typography>
-          <Typography variant="h6">Gain insights into your financial health</Typography>
+          <Typography variant="h6">Trends across the studio’s year, month by month</Typography>
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>

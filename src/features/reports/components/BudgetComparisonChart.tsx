@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material";
 import { BarDatum, ResponsiveBar } from "@nivo/bar";
 import { tokens } from "../../../assets/theme";
+import { formatCurrency } from "../../../config/brand";
 
 export const BudgetComparisonChart = ({ data }: { data: BarDatum[] }) => {
   const theme = useTheme();
@@ -17,7 +18,7 @@ export const BudgetComparisonChart = ({ data }: { data: BarDatum[] }) => {
       layout="vertical"
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
-      valueFormat=" =-$0,~"
+      valueFormat={(value) => formatCurrency(Number(value))}
       colors={[ `${colors.blueAccent[300]}`, `${colors.blueAccent[500]}` ]}
       defs={[
         {
@@ -61,7 +62,7 @@ export const BudgetComparisonChart = ({ data }: { data: BarDatum[] }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "country",
+        legend: "Category",
         legendPosition: "middle",
         legendOffset: 32,
       }}
@@ -69,7 +70,7 @@ export const BudgetComparisonChart = ({ data }: { data: BarDatum[] }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "food",
+        legend: "Amount",
         legendPosition: "middle",
         legendOffset: -40,
       }}
@@ -106,9 +107,9 @@ export const BudgetComparisonChart = ({ data }: { data: BarDatum[] }) => {
       }}
       legends={[]}
       role="application"
-      ariaLabel="Nivo bar chart demo"
+      ariaLabel="Budgeted versus actual spending"
       barAriaLabel={(e) =>
-        e.id + ": " + e.formattedValue + " in country: " + e.indexValue
+        e.id + ": " + e.formattedValue + " in " + e.indexValue
       }
     />
   );

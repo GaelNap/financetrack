@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
 import { tokens } from "../../../assets/theme";
+import { chartPalette } from "../../../config/brand";
 
 interface InvestmentPerformanceChartProps {
   id: string;
@@ -30,7 +31,7 @@ export const InvestmentPerformanceChart = ({ data }: { data: InvestmentPerforman
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "transportation",
+        legend: "Period",
         legendOffset: 36,
         legendPosition: "middle",
       }}
@@ -38,7 +39,7 @@ export const InvestmentPerformanceChart = ({ data }: { data: InvestmentPerforman
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "count",
+        legend: "Return",
         legendOffset: -40,
         legendPosition: "middle",
       }}
@@ -69,7 +70,7 @@ export const InvestmentPerformanceChart = ({ data }: { data: InvestmentPerforman
       }}
       enableGridX={false}
       enableGridY={false}
-      colors={{ scheme: "set1" }}
+      colors={chartPalette}
       pointSize={10}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}

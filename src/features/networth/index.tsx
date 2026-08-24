@@ -10,7 +10,7 @@ export default function NetWorth() {
       <Box sx={{ padding: 2 }}>
         <Box sx={{ paddingBlock: 2, width: "100%" }}>
           <Typography variant="h1">Net Worth</Typography>
-          <Typography variant="h6">Measure your financial success and set new targets</Typography>
+          <Typography variant="h6">Everything the studio owns, minus everything it owes</Typography>
         </Box>
         <Grid container spacing={2} sx={{ width: "100%" }}>
           <Grid item xs={12} md={6}>

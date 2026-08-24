@@ -104,7 +104,7 @@ export const DebtToIncomeRatioChart = ({ data }: { data: BarDatum[] }) => {
         },
       ]}
       role="application"
-      ariaLabel="Nivo bar chart demo"
+      ariaLabel="Debt to income ratio by year"
       barAriaLabel={(e) =>
         e.id + ": " + e.formattedValue + " in country: " + e.indexValue
       }

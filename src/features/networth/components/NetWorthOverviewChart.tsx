@@ -67,7 +67,7 @@ export const NetWorthOverviewChart = ({ data }: { data: NetWorthOverviewChartPro
           },
         },
       }}
-      colors={colors.primary[100]}
+      colors={colors.greenAccent[500]}
       pointSize={10}
       pointColor={{ theme: "background" }}
       pointBorderWidth={2}

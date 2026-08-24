@@ -1,6 +1,7 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { Edit } from "@mui/icons-material";
 import { tokens } from "../../../assets/theme";
+import { preferences } from "../../../config/brand";
 import "../SettingsStyles.css";
 
 const AccountPreferences = () => {
@@ -18,25 +19,27 @@ const AccountPreferences = () => {
             <Typography color={colors.grey[300]} variant="h6">
               Language
             </Typography>
-            <Typography variant="h5">English</Typography>
+            <Typography variant="h5">{preferences.language}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
               Currency
             </Typography>
-            <Typography variant="h5">USD</Typography>
+            <Typography variant="h5">
+              {preferences.currency} ({preferences.currencySymbol})
+            </Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
               Date and Time Format
             </Typography>
-            <Typography variant="h5">D/M/Y</Typography>
+            <Typography variant="h5">{preferences.dateFormat}</Typography>
           </Box>
           <Box className="settingItem">
             <Typography color={colors.grey[300]} variant="h6">
               Timezone
             </Typography>
-            <Typography variant="h5">UTC+0</Typography>
+            <Typography variant="h5">{preferences.timezone}</Typography>
           </Box>
           <Box className="settingItem btn">
             <Button color="success" endIcon={<Edit />} variant="outlined">

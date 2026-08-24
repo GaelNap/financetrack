@@ -10,7 +10,7 @@ export default function Budget() {
       <Box sx={{ padding: 2 }}>
         <Box sx={{ paddingBlock: 2 }}>
           <Typography variant="h1">Budget</Typography>
-          <Typography variant="h6">Track and control your spending</Typography>
+          <Typography variant="h6">Where the studio’s money comes from, and where it goes</Typography>
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} lg={8}>

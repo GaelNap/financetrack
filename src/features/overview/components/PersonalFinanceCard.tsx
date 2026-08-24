@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { SparkLineChart } from "@mui/x-charts";
 import { tokens } from "../../../assets/theme";
+import { formatCurrency } from "../../../config/brand";
 
 type PersonalFinancesCardProps = {
   title: string;
@@ -35,7 +36,7 @@ export default function PersonalFinancesCard({
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: "0.5rem", width: "max(30%, 50%)" }}>
         {icon}
-        <Typography variant="h3">${value}</Typography>
+        <Typography variant="h3">{formatCurrency(value)}</Typography>
         <Typography variant="h6" color={colors.grey[400]}>{title}</Typography>
       </Box>
       <Box>

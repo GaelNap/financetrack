@@ -16,6 +16,7 @@ import { tokens } from "../assets/theme";
 import SidebarContext from "../context/SidebarContext";
 import Logo from "../assets/logo.svg";
 import MenuLink from "../components/MenuLink";
+import { brand } from "../config/brand";
 
 export default function Sidebar() {
   const theme = useTheme();
@@ -97,10 +98,19 @@ export default function Sidebar() {
                     flexDirection: "row",
                   }}
                 >
-                  <Avatar src={Logo} sx={{ height: 25, width: 25 }} />
-                  <Typography variant="h3" color={colors.grey[100]} ml={1}>
-                    FinTrack
-                  </Typography>
+                  <Avatar
+                    alt={brand.fullName}
+                    src={Logo}
+                    sx={{ height: 32, width: 32 }}
+                  />
+                  <Box ml={1.5}>
+                    <Typography variant="h3" color={colors.grey[100]}>
+                      {brand.name}
+                    </Typography>
+                    <Typography variant="h6" color={colors.grey[400]}>
+                      {brand.tagline}
+                    </Typography>
+                  </Box>
                 </Box>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlined />

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Studio Calanque">
+  <title>Studio Calanque</title>
+  <defs>
+    <linearGradient id="monogram" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d3b4f"/>
+      <stop offset="100%" stop-color="#1b8ac9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="48" cy="48" r="48" fill="url(#monogram)"/>
+  <text x="48" y="49" fill="#f4efe6" font-family="'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif"
+        font-size="36" font-weight="600" letter-spacing="1"
+        text-anchor="middle" dominant-baseline="central">SC</text>
+</svg>

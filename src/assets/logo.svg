@@ -1,3 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="27.692" height="30" viewBox="0 0 27.692 30">
-  <path id="Icon_ionic-md-flower" data-name="Icon ionic-md-flower" d="M29.1,18.375A5.339,5.339,0,0,0,26.784,8.192a5.431,5.431,0,0,0-3.072.945l.043-.4a5.409,5.409,0,0,0-10.817,0l.043.4a5.369,5.369,0,1,0-5.387,9.238A5.339,5.339,0,0,0,9.909,28.558a5.431,5.431,0,0,0,3.072-.945l-.043.4a5.409,5.409,0,0,0,10.817,0l-.043-.4A5.369,5.369,0,1,0,29.1,18.375ZM18.346,23.733a5.358,5.358,0,1,1,5.409-5.358A5.386,5.386,0,0,1,18.346,23.733Z" transform="translate(-4.5 -3.375)" fill="#512b81"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Studio Calanque">
+  <title>Studio Calanque</title>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3fd0c9"/>
+      <stop offset="100%" stop-color="#1b8ac9"/>
+    </linearGradient>
+    <clipPath id="round">
+      <circle cx="16" cy="16" r="16"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <!-- sky and, below the horizon, the water of the inlet -->
+    <rect width="32" height="32" fill="#0d3b4f"/>
+    <rect y="17" width="32" height="15" fill="url(#sea)"/>
+    <!-- the sun sitting in the gap between the two headlands -->
+    <circle cx="16" cy="11" r="4" fill="#f2b134"/>
+    <!-- limestone headlands closing in on the water -->
+    <path d="M0 32V12l13 20Z" fill="#efe6d3"/>
+    <path d="M32 32V9L19 32Z" fill="#d8c8ad"/>
+  </g>
 </svg>

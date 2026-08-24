@@ -1,6 +1,7 @@
 import { useTheme } from "@mui/material";
 import { ResponsivePie } from "@nivo/pie";
 import { tokens } from "../../../assets/theme";
+import { chartPalette, preferences } from "../../../config/brand";
 
 interface BudgetAllocationChartProps {
   id: string;
@@ -18,7 +19,7 @@ export const BudgetAllocationChart = ({ data }: { data: BudgetAllocationChartPro
       data={data}
       margin={{ top: 20, right: 80, bottom: 20, left: 80 }}
       activeOuterRadiusOffset={8}
-      colors={{ scheme: "blues" }}
+      colors={chartPalette}
       borderColor={{
         from: "color",
         modifiers: [["darker", 0.2]],
@@ -32,7 +33,7 @@ export const BudgetAllocationChart = ({ data }: { data: BudgetAllocationChartPro
       arcLabelsTextColor={"#000"}
       arcLabelsRadiusOffset={0.7}
       valueFormat={(value) =>
-        `${Number(value).toLocaleString("ru-RU", {
+        `${Number(value).toLocaleString(preferences.locale, {
           minimumFractionDigits: 2,
         })}%`
       }

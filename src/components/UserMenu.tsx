@@ -21,8 +21,9 @@ import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 
-import userImage from "../assets/user.png";
+import avatarImage from "../assets/avatar.svg";
 import { ColorModeContext, tokens } from "../assets/theme";
+import { account } from "../config/brand";
 
 export default function UserMenu() {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -48,16 +49,23 @@ export default function UserMenu() {
         gap: 2,
       }}
     >
-      <Typography
-        variant="h6"
-        color={colors.primary[100]}
-        sx={{ display: { xs: "none", sm: "none", md: "flex" } }}
+      <Box
+        sx={{
+          display: { xs: "none", sm: "none", md: "flex" },
+          flexDirection: "column",
+          alignItems: "flex-end",
+        }}
       >
-        John Smith
-      </Typography>
-      <Tooltip title="">
+        <Typography variant="h6" color={colors.primary[100]}>
+          {account.displayName}
+        </Typography>
+        <Typography variant="h6" color={colors.grey[500]}>
+          {account.owner} · {account.role}
+        </Typography>
+      </Box>
+      <Tooltip title={account.displayName}>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar alt="Remy Sharp" src={userImage} />
+          <Avatar alt={account.displayName} src={avatarImage} />
         </IconButton>
       </Tooltip>
       <Menu
@@ -122,7 +130,7 @@ export default function UserMenu() {
           <ListItemIcon>
             <ManageAccountsOutlinedIcon />
           </ListItemIcon>
-          <Typography variant="h5">Manage Account(s)</Typography>
+          <Typography variant="h5">Manage studio accounts</Typography>
         </MenuItem>
         <MenuItem
           onClick={colorMode.toggleColorMode}
@@ -160,7 +168,7 @@ export default function UserMenu() {
           <ListItemIcon>
             <PersonAddOutlinedIcon />
           </ListItemIcon>
-          <Typography variant="h5">Add another account</Typography>
+          <Typography variant="h5">Add another studio</Typography>
         </MenuItem>
         <MenuItem>
           <ListItemIcon>

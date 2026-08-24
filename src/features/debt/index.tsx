@@ -10,7 +10,7 @@ export default function DebtManagement() {
       <Box sx={{ padding: 2 }}>
         <Box sx={{ paddingBlock: 2, width: "100%" }}>
           <Typography variant="h1">Debt Management</Typography>
-          <Typography variant="h6">Efficiently manage and conquer your debts over time</Typography>
+          <Typography variant="h6">Studio loans and credit lines, and how fast they are shrinking</Typography>
         </Box>
         <Grid container spacing={2} sx={{ width: "100%" }}>
           <Grid item xs={12} md={6} lg={8}>
